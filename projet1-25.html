@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projet1-25</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+          
+          <img v-bind:src="url" :width="valeur" 
+          @click.left="largeur(200)"
+          @click.right="largeur(100)"
+          @click.middle="largeur(400)"
+          
+          />
+          
+
+        </div>
+        <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                 valeur: 300,
+                 url : `https://img.freepik.com/free-photo/high-angle-couple-hiking-trip_23-2150343062.jpg?t=st=1718030872~exp=1718034472~hmac=9b031ad43c49184c3f577c8c2628485bb48ff43f9d972bc0eff33ef4bbfb758c&w=996`
+                }
+            },
+            methods: {
+               
+                largeur(param)
+                {
+                    this.valeur = param;
+                }
+            },
+            
+        });
+        app.mount('#app');
+
+    </script>
+    </body>
+</html>

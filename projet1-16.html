@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projet1-16</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+          
+          <p>Cochez les cases des langages que vous connaissez :</p>
+           
+          <input type="checkbox" value="HTML" v-model="choix"  /> HTML
+          <input type="checkbox" value="CSS" v-model="choix" /> CSS
+          <input type="checkbox" value="Javascript" v-model="choix"/> Javascript
+
+          <p>Cases cochées : {{choix}}</p>
+        </div>
+        <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                 
+                 choix : []
+                }
+            }
+            
+        });
+        app.mount('#app');
+
+    </script>
+    </body>
+</html>

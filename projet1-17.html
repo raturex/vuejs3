@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projet1-17</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+          
+          <p>quel langage preférez vous ?</p>
+           
+          <input type="radio" value="HTML" v-model="choix"  /> HTML
+          <input type="radio" value="CSS" v-model="choix" /> CSS
+          <input type="radio" value="Javascript" v-model="choix"/> Javascript
+
+          <p>Langage préféré : {{choix}}</p>
+        </div>
+        <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                 
+                 choix : ''
+                }
+            }
+            
+        });
+        app.mount('#app');
+
+    </script>
+    </body>
+</html>
