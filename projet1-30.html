@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projet1-30</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <input type="radio" value="click" checked v-model="choix"/><label>click</label>
+            <input type="radio" value="dbclick"  v-model="choix" /><label>double click</label>
+            <p>
+            <img :width="taille" @[choix]="modifierTaille" src="https://img.freepik.com/free-photo/high-angle-couple-hiking-trip_23-2150343062.jpg?t=st=1718030872~exp=1718034472~hmac=9b031ad43c49184c3f577c8c2628485bb48ff43f9d972bc0eff33ef4bbfb758c&w=996"/>           
+            </p>
+        </div>
+        <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                
+                choix : "click",
+                taille : 200
+            }},
+            methods: {
+               
+                modifierTaille()
+                {
+                 this.taille = this.taille * 1.1 ;
+                }
+            }
+            
+        });
+        app.mount('#app');
+
+    </script>
+    </body>
+</html>

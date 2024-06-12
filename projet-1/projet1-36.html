@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projet1-36</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        
+    </head>
+    <body>
+        <div id="app">
+                
+              <label>Couleur : </label> 
+              <select v-model="couleur">
+                <option value="red">Rouge</option>
+                <option value="blue">Bleu</option>
+                <option value="black">Noir</option>
+              </select>
+
+              <label>Taille : </label> 
+              <select v-model="taille">
+                <option value="16px">16px</option>
+                <option value="20px" >20px</option>
+                <option value="35px">35px</option>
+              </select>
+
+                <br/>
+                <br/>
+                <div :style="{color:couleur, fontSize:taille}">Mon texte à appliquer un style css.</div>
+
+            </div>
+           
+        </div>
+        <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+               couleur: '',
+               taille: '',
+               
+            }},
+           
+            
+        });
+        app.mount('#app');
+
+    </script>
+    </body>
+</html>

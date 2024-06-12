@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projet1-31</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            
+                <input type="text" value="" v-model="valeur" @keyup.enter="majuscule"  autofocus />
+                <button @click="majuscule" type="button">Valider</button>
+            
+           
+        </div>
+        <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                valeur : ''
+            }},
+            methods: {
+               
+                majuscule()
+                {
+                 this.valeur = this.valeur.toUpperCase() ;
+                }
+            }
+            
+        });
+        app.mount('#app');
+
+    </script>
+    </body>
+</html>

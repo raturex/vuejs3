@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projet1-34</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <style>
+            .gras {
+                font-weight: bolder;
+            }
+            .italic {
+                font-style: italic;
+            }
+            .under {
+                text-decoration: underline;
+            }
+           
+        </style>
+    </head>
+    <body>
+        <div id="app">
+                
+                <input type="checkbox" v-model="bold" />Gras
+                <input type="checkbox" v-model="ital" />italique
+                <input type="checkbox" v-model="under" />souligné
+
+                <br/>
+
+                <div :class="{gras:bold, italic:ital, under:under}">Mon texte à appliquer un style css.</div>
+
+            </div>
+           
+        </div>
+        <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+               bold: false,
+               ital: false,
+               under: false,
+
+            }},
+           
+            
+        });
+        app.mount('#app');
+
+    </script>
+    </body>
+</html>

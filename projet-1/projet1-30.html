@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projet1-29</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <ul>
+                <li v-for="(personne,index) in personnes">
+                    {{personne.nom}} {{personne.prenom}} {{personne.age}}
+                </li>
+            </ul>
+        </div>
+        <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                
+                personnes : [
+                    {prenom : "Testeur jp","nom":"Test", age:25},
+                    {prenom : "Testeur m","nom":"Testage", age:35},
+                    {prenom : "Testeur k","nom":"Testlol", age:40},
+                    {prenom : "Testeur z","nom":"Testi", age:29},
+                ],
+                taille : 200
+            }},
+            methods: {
+               
+                modifierTaille()
+                {
+                 this.taille = this.taille * 1.1 ;
+                }
+            }
+            
+        });
+        app.mount('#app');
+
+    </script>
+    </body>
+</html>
